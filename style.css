@@ -105,6 +105,16 @@ footer a{color:rgba(255,255,255,0.95);text-decoration:none}
 
 @media(max-width:520px){
   .nav-link{padding:6px 8px;font-size:12px}
+  .topnav{padding:6px 8px;gap:4px;margin-bottom:12px}
+  .brand{font-size:13px}
+  .nav-right{gap:4px}
+}
+
+@media(max-width:400px){
+  .topnav{flex-wrap:wrap;padding:4px 6px}
+  .brand{font-size:12px}
+  .nav-link{padding:4px 6px;font-size:11px}
+  .nav-right{gap:2px}
 }
 
 /* Large-screen layout: show featured stories as a horizontal flex row */
