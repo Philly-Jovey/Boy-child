@@ -9,21 +9,6 @@
 </head>
 <body>
 	<div class="container">
-		<!-- Compact header for small screens -->
-		<div class="mini-header" aria-hidden="true">
-			<a class="brand" href="#home">Boy Child Forum</a>
-			<button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-				<span class="hamburger" aria-hidden="true"></span>
-			</button>
-			<nav class="mini-menu" aria-hidden="true">
-				<a class="mini-link" href="#focus">Focus Areas</a>
-				<a class="mini-link" href="#stories">Stories</a>
-				<a class="mini-link" href="#events">Events</a>
-				<a class="mini-link" href="#join">Join</a>
-				<a class="mini-link" href="#volunteer">Volunteer</a>
-				<a class="mini-link" href="#help">Get Help</a>
-			</nav>
-		</div>
 		<nav class="topnav" aria-label="Main navigation">
 			<div>
 				<a class="brand" href="#home">Boy Child Forum</a>
@@ -152,28 +137,6 @@
 				if(dest){ e.preventDefault(); dest.scrollIntoView({behavior:'smooth',block:'start'}); }
 			})
 		})
-	</script>
-
-	<script>
-		// Mobile menu toggle
-		(function(){
-			const toggle = document.querySelector('.menu-toggle');
-			const menu = document.querySelector('.mini-menu');
-			if(!toggle || !menu) return;
-			toggle.addEventListener('click', ()=>{
-				const isOpen = menu.classList.toggle('open');
-				menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-				toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			});
-			// close on outside click
-			document.addEventListener('click', (e)=>{
-				if(!menu.classList.contains('open')) return;
-				if(e.target.closest('.mini-header')) return;
-				menu.classList.remove('open');
-				toggle.setAttribute('aria-expanded','false');
-				menu.setAttribute('aria-hidden','true');
-			});
-		})();
 	</script>
 </body>
 </html>
