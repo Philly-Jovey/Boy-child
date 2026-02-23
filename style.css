@@ -22,9 +22,11 @@ body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica
 .nav-link.help{color:var(--muted)}
 
 /* Hero */
-.hero{display:flex; flex-direction:column; gap:28px; align-items:flex-start; padding:64px 0}
-.hero-left{width:100%}
-.eyebrow{display:inline-block;padding:6px 10px;background:linear-gradient(90deg,var(--green),var(--blue));color:#fff;border-radius:999px;font-weight:600;font-size:13px}
+.hero{display:flex; flex-direction:column; gap:24px; align-items:stretch; padding:0 0 40px 0;position:relative}
+.hero-left{width:100%;padding:40px 0}
+.hero-image-full{width:100%;margin:0 -28px 20px -28px;position:relative}
+.hero-image-full img{width:100%;height:auto;display:block;max-height:500px;object-fit:cover}
+.eyebrow{display:inline-block;padding:6px 10px;background:linear-gradient(90deg,var(--green),var(--blue));color:#fff;border-radius:999px;font-weight:600;font-size:13px;position:absolute;top:16px;left:24px;z-index:10;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
 h1{font-size:36px;margin:18px 0 14px;line-height:1.05}
 .lead{color:var(--muted);margin:0 0 20px;max-width:640px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
@@ -32,7 +34,9 @@ h1{font-size:36px;margin:18px 0 14px;line-height:1.05}
 .btn.primary{background:var(--blue);color:#fff}
 .btn.green{background:var(--green);color:#fff}
 .btn.ghost{background:transparent;border:2px solid rgba(0,0,0,0.06)}
-.hero-right{width:100%}
+
+/* Hero right (deprecated - kept for reference) */
+.hero-right{display:none}
 .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));border-radius:14px;overflow:hidden;box-shadow:0 10px 40px rgba(16,24,40,0.06)}
 .hero-card img{width:100%;height:320px;object-fit:cover;display:block}
 .hero-copy{padding:14px}
@@ -92,7 +96,10 @@ footer a{color:rgba(255,255,255,0.95);text-decoration:none}
 }
 
 @media(max-width:900px){
-  .hero{flex-direction:column}
+  .hero{flex-direction:column;gap:20px}
+  .hero-left{width:100%;padding:20px 0}
+  .hero-image-full{margin:0 -20px 0 -20px}
+  .eyebrow{top:12px;left:16px}
   .hero-right{width:100%}
   .focus{grid-template-columns:repeat(2,1fr)}
   .stories{grid-template-columns:1fr}
@@ -121,6 +128,7 @@ footer a{color:rgba(255,255,255,0.95);text-decoration:none}
   /* Extra compact buttons for tiny screens */
   .cta-row{gap:4px;flex-wrap:nowrap}
   .btn{padding:8px 10px;font-size:12px}
+  .eyebrow{padding:4px 8px;font-size:12px;top:10px;left:12px}
 }
 
 /* Large-screen layout: show featured stories as a horizontal flex row */
