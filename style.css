@@ -48,7 +48,7 @@ h1{font-size:36px;margin:18px 0 14px;line-height:1.05}
 .story h3{margin:10px 0 6px;font-size:18px}
 
 .events{display:flex;gap:14px;flex-wrap:wrap}
-.event{background:linear-gradient(90deg,#fff,#fff);padding:12px;border-radius:10px;min-width:260px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.event{background:linear-gradient(90deg,#fff,#fff);padding:12px;border-radius:10px;width:260px;height:120px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
 .event .muted{color:var(--muted);margin-top:6px}
 
 .join-section{margin:36px 0;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(33,150,243,0.06),rgba(76,175,80,0.04));}
@@ -108,6 +108,9 @@ footer a{color:rgba(255,255,255,0.95);text-decoration:none}
   .topnav{padding:6px 8px;gap:4px;margin-bottom:12px}
   .brand{font-size:13px}
   .nav-right{gap:4px}
+  /* Buttons fit on single line on mobile */
+  .cta-row{gap:6px}
+  .btn{padding:10px 12px;font-size:13px}
 }
 
 @media(max-width:400px){
@@ -115,6 +118,9 @@ footer a{color:rgba(255,255,255,0.95);text-decoration:none}
   .brand{font-size:12px}
   .nav-link{padding:4px 6px;font-size:11px}
   .nav-right{gap:2px}
+  /* Extra compact buttons for tiny screens */
+  .cta-row{gap:4px;flex-wrap:nowrap}
+  .btn{padding:8px 10px;font-size:12px}
 }
 
 /* Large-screen layout: show featured stories as a horizontal flex row */
